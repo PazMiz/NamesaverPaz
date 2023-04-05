@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <form>
+    <center> <h1><label for="name">Enter your name:</label></h1></center>
+<center>   <input type="text" id="name" name="name"></center>
+        <br>
+        <center><button type="submit">Submit</button></center>
+        <br>
+
+    <center><input id="anyname"></center>
+    <center><a href="index.html">second page with greetings</a></center>
+        <script>
+            function saveName() {
+                localStorage.setItem("NameData", anyname.value)
+
+            }
+            function loadName() {
+                anyname.value = localStorage.getItem("NameData")
+            }
+
+
+            
+            
+
+            //תרגיל 2 בדף שואל את השם שלו ובדף השני זוכר את השם שהוא הכניס ואומר לו ברוך הבא
+            const form = document.querySelector('form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                localStorage.setItem('name', name);
+                window.location.href = 'index.html';
+            });
+
+
+        </script>
+
+</body>
+
+</html>
